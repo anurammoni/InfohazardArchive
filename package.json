@@ -4,6 +4,7 @@
   "description": "",
   "main": "definitions.js",
   "scripts": {
+   	"build-ghpages": "npx @awesome.me/buildawesome --pathprefix=/InfohazardArchive/",
     "start": "eleventy --serve",
     "build": "eleventy",
     "test": "echo \"Error: no test specified\" && exit 1"
