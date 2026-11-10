@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/css/styleEx.css">
+    <script src="/js/script.js"></script>
+    <script src="/js/definitions.js"></script>
+
+</head>
+<body>
+    <link rel="icon" href="data:," />
+<img src="/img/censorbar.png" id="censor">
+
+    <img src="/img/censor2.png" id="BGimg">
+    <div id="container">
+    <h1 class="exTitle">{{ title }}</h1>
+<!-- <img src="../corona.jpg" alt="CORONA Satellite"> -->
+    <div class="grid">
+       <div class="summary">See also: 
+            <div style="font-family: pxGrotesk; font-weight: 400; display: inline;">
+        {% for page in related %}
+        <a href="{{ page.url }}">{{ page.title }}</a>{% if not loop.last %},&nbsp; {% endif %}
+        {% endfor %}
+            </div>
+        </div>
+        <!-- <div class="summary">The United States created a satellite program called CORONA during the Cold War to spy on the Soviet Union. Because they were able to obtain information through recon missions, it put the Soviet Union at a tactical disadvantage.</div> -->
+
+            <div class="effect">Adversarial Risks</div>
+            <div class="type" id="{{ hazardType }}"></div>
+            <div class="subtype" id="{{ subtype }}"></div>
+            <div class="bodyText">{{ content | safe }}</div>
+
+
+         <div class="source">
+            {% for page in source %}
+            <a href="{{ page.url }}">{{ page.title }}</a>
+            {% if not loop.last %}<br>{% endif %}
+            {% endfor %}         
+         </div>
+        <nav><a href="/"><div id="X"></div></a></nav>
+    </div>
+    </div>
+
+
+</body>
+</html>
