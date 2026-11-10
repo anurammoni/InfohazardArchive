@@ -1,0 +1,174 @@
+@font-face {
+  font-family: ortica;
+  src: url('font/OrticaAngular-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: orticaReg;
+  src: url('font/OrticaLinear-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: pxGrotesk;
+  src: url('font/Px\ Grotesk\ Regular.ttf') format('opentype');
+}
+
+:root {
+  --orange: #b84a00;
+  --background-color: #a3aac1;
+}
+
+#BGimg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 130%;
+  height: 200vh;
+  object-fit: cover;
+  opacity: 0.4;
+  z-index: -1;
+  mix-blend-mode: multiply;
+}
+
+body {
+  /* background-image: url(dither.jpg); */
+  background-color: var(--background-color);
+  margin: 4rem;
+    font-family: pxGrotesk;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+#bodygrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-auto-rows: min-content; */
+  border-top: 2px solid rgb(0, 0, 0);
+  max-height: 2vh;
+  
+}
+
+#bodygrid > div {
+  box-sizing: border-box;
+    border-top: 2px solid rgb(0, 0, 0);
+  }
+
+.gridHead {
+ font-family: ortica;
+}
+
+.define {
+  margin-top: 0;
+  width: 50%;
+  /* font-variant-caps: all-small-caps; */
+  font-size: 1.15rem;
+  line-height: 1.3rem;
+}
+
+h1 {
+  font-family: ortica;
+  font-size: 10rem;
+  margin: 1rem;
+  line-height: 1;
+}
+
+a {
+  color: var(--orange);
+}
+
+.effect {
+  
+  grid-row: span 1500;
+  grid-column: 1;    /* Starts at horizontal line 2, ends at 3 */
+  
+  /* font-family: orticaReg; */
+  font-size: 2.25rem;
+  /* letter-spacing: 0.05em; */
+}
+
+.type {
+  padding: 0.35rem 0;
+  grid-row: span 172;
+  grid-column: 2;    /* Starts at horizontal line 2, ends at 3 */
+  transition: padding 0.5s ease-in-out;
+  font-size: 1.5rem;
+
+}
+
+.type:hover {
+  padding-bottom: 1.5rem;
+  grid-column: 1rem;
+
+}
+
+.def {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.75s ease-in-out, opacity 0.9s ease-in-out;
+
+    font-size: 0.85rem;
+    letter-spacing: 0.025rem;
+    text-wrap: pretty;
+
+}
+
+.active > .def {
+  max-height: 10rem;
+  opacity: 0.75;
+}
+
+.subtype {
+  padding: 0.25rem;
+  grid-row: span 3;
+  grid-column: 3;   
+  transition: padding 0.75s ease-in-out;
+  
+}
+
+.subtype:hover {
+  padding-bottom: 1rem;
+}
+
+.example {
+  /* display: none; */
+  /* padding-left: 6rem; */
+  margin: auto 0;
+  grid-column: 4;    /* Starts at horizontal line 2, ends at 3 */
+}
+
+
+
+#censor {
+  /* display: block; */
+  position: absolute;
+  transform: translate(-4rem, -24rem);
+  width: 68rem;
+  height: 16rem;
+  mix-blend-mode: multiply;
+  
+  animation: wipeLtoR 1s ease-in-out forwards;
+  /* left: 400px;  */
+}
+
+#censor:hover {
+  animation: wipeRtoL 0.5s ease-in-out forwards;
+}
+
+
+@keyframes wipeLtoR {
+  from {
+    clip-path: inset(0 100% 0 0); 
+  }
+  to {
+    clip-path: inset(0 0 0 0); 
+  }
+}
+
+@keyframes wipeRtoL {
+  from {
+    clip-path: inset(0 0 0 0); 
+  }
+  to {
+    clip-path: inset(0 100% 0 0); 
+  }
+}
