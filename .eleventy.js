@@ -7,7 +7,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/img/");
 
   return {
-    pathPrefix: process.env.ELEVENTY_ENV === "production" ? "/InfohazardArchive/" : "/",
+    pathPrefix: "/InfohazardArchive/",
     dir: {
       input: "src",
       output: "public"
