@@ -1,0 +1,222 @@
+
+:root {
+  --orange: #b54800;
+  --background-color: #9ba0b3;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--orange);
+}
+
+
+@font-face {
+  font-family: ortica;
+  src: url('font/OrticaAngular-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: orticaReg;
+  src: url('font/OrticaLinear-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: pxGrotesk;
+  src: url('font/Px\ Grotesk\ Regular.ttf') format('opentype');
+}
+
+
+html {
+  background-color: #661e0b;
+}
+
+
+body {
+ overflow: hidden;
+}
+
+#container {
+  /* transform: rotate(2deg); */
+  background-color: var(--background-color);
+  margin: 5% 15%;
+  padding: 1em 3em;
+  
+  font-family: pxGrotesk;
+  font-size: 16px;
+  max-height: 80%;
+}
+
+#BGimg {
+  position: absolute;
+  top: 0;
+  left: -2%;
+  width: 110%;
+  height: 100%;
+  /* object-fit: cover; */
+  /* opacity: 0.4; */
+  z-index: -1;
+  mix-blend-mode: multiply;
+}
+
+h1 {
+  font-family: ortica;
+  font-size: 6rem;
+  margin: 1rem 0;
+  line-height: 1;
+  max-width: 90%;
+}
+
+a {
+  color: var(--orange);
+}
+
+.grid {
+  border-top: 2px solid black;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid > * {
+  margin: 0;
+  padding: 0.25rem;
+  box-sizing: border-box;
+  border-top: 2px solid rgb(0, 0, 0);
+}
+
+.summary {
+  font-family: orticaReg;
+  grid-column: span 3;
+  /* padding: 0.5rem 0; */
+  /* font-size: 1.25rem; */
+  font-weight: 900;
+    font-size: 1.05rem;
+
+}
+
+.effect {
+  grid-column: 1;
+  /* font-family: orticaReg; */
+  font-size: 1.75rem;
+}
+
+.type {
+  /* grid-column: 1; */
+  font-size: 1.35rem;
+  /* margin-left: 2rem; */
+  line-height: 1.5rem;
+}
+
+.subtype {
+  /* grid-column: 1; */
+  font-size: 1.15rem;
+  /* margin-left: 4rem; */
+}
+
+.def {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 1.25s ease-in-out, opacity 0.9s ease-in-out;
+
+  padding: 0.15rem 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+
+}
+
+.active > .def {
+  max-height: 10rem;
+  opacity: 0.75;
+}
+
+p {
+  margin-top: 0;
+}
+
+.bodyText {
+  padding-left: 0.75rem;
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 5;
+
+  /* border-left: 2px solid var(--orange); */
+  max-height: 20.5rem;
+  overflow: auto;
+  /* scrollbar-width: none; */
+}
+
+.source {
+  grid-column: 1;
+  grid-row: 6;
+  font-size: 1.05rem;
+  margin-top: auto; 
+}
+
+nav {
+  grid-column: span 3;
+}
+
+
+#X {
+  position: relative;
+  width: 35px;
+  height: 35px;
+
+}
+
+/* Base styles for both lines of the X */
+#X::before,
+#X::after {
+  content: "";
+  position: absolute;
+  top: 0.35rem;
+  left: 0.5rem;
+  width: 5px;
+  height: 100%;
+  background-color: var(--orange);
+  transition: transform 0.5s ease; 
+}
+
+/* Rotate the first line clockwise */
+#X::before {
+  transform: rotate(45deg);
+}
+
+/* Rotate the second line counter-clockwise */
+#X::after {
+  transform: rotate(-45deg);
+}
+
+#X:hover::before,
+#X:hover::after {
+  transform: rotate(90deg);
+}
+
+#censor {
+  /* display: block; */
+  position: absolute;
+  transform: translate(15rem, 0rem) rotate(4deg);
+  width: 48rem;
+  height: 16rem;
+  mix-blend-mode: multiply;
+  
+  animation: wipeRtoL 1.25s ease-in-out forwards;
+  /* left: 400px;  */
+}
+
+@keyframes wipeRtoL {
+  from {
+    clip-path: inset(0 0 0 0); 
+  }
+  to {
+    clip-path: inset(0 100% 0 0); 
+  }
+}
