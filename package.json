@@ -4,7 +4,7 @@
   "description": "",
   "main": "definitions.js",
   "scripts": {
-   	"build-ghpages": "npx @awesome.me/buildawesome --pathprefix=/InfohazardArchive/",
+    "build-ghpages": "npx @awesome.me/buildawesome --pathprefix=/InfohazardArchive/",
     "start": "eleventy --serve",
     "build": "eleventy",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,6 +14,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "@11ty/eleventy": "^3.1.8"
+    "@11ty/eleventy": "^3.1.8",
+    "@awesome.me/buildawesome": "^4.0.0-alpha.10"
   }
 }
